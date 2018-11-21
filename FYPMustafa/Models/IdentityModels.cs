@@ -20,6 +20,13 @@ namespace FYPMustafa.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<UserInformation> UserInformation { get; set; }
+        public DbSet<Restaurant> Restaurants { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Menu> Menus { get; set; }
+        public DbSet<MenuItem> MenuItems { get; set; }
+        public DbSet<Picture> Pictures { get; set; }
+        public DbSet<Tag> Tags { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
