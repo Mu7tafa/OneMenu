@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -17,11 +18,19 @@ namespace FYPMustafa.Models
 
         [Key]
         public string ItemID { get; set; }
+
         public string RestaurantID { get; set; }
+
         public string CategoryID { get; set; }
+
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(250)]
         public string Status { get; set; }
+
         public Nullable<decimal> Price { get; set; }
+
         public string Description { get; set; }
+
         public string Ingredients { get; set; }
 
         public virtual Category Category { get; set; }

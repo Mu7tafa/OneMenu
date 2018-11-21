@@ -23,7 +23,7 @@ namespace FYPMustafa.Migrations
                         ItemID = c.String(nullable: false, maxLength: 128),
                         RestaurantID = c.String(maxLength: 128),
                         CategoryID = c.String(maxLength: 128),
-                        Status = c.String(),
+                        Status = c.String(maxLength: 250, unicode: false),
                         Price = c.Decimal(precision: 18, scale: 2),
                         Description = c.String(),
                         Ingredients = c.String(),
@@ -52,11 +52,11 @@ namespace FYPMustafa.Migrations
                 c => new
                     {
                         RestaurantID = c.String(nullable: false, maxLength: 128),
-                        Name = c.String(),
-                        Street = c.String(),
-                        City = c.String(),
-                        Country = c.String(),
-                        ZipCode = c.String(),
+                        Name = c.String(maxLength: 50, unicode: false),
+                        Street = c.String(maxLength: 250, unicode: false),
+                        City = c.String(maxLength: 50, unicode: false),
+                        Country = c.String(maxLength: 50, unicode: false),
+                        ZipCode = c.String(maxLength: 10, fixedLength: true, unicode: false),
                         OwnerID = c.String(),
                     })
                 .PrimaryKey(t => t.RestaurantID);
@@ -66,7 +66,7 @@ namespace FYPMustafa.Migrations
                 c => new
                     {
                         MenuID = c.String(nullable: false, maxLength: 128),
-                        Type = c.String(),
+                        Type = c.String(maxLength: 50, unicode: false),
                         RestaurantID = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.MenuID)
@@ -79,16 +79,16 @@ namespace FYPMustafa.Migrations
                     {
                         UserID = c.String(nullable: false, maxLength: 128),
                         RestuarantID = c.String(),
-                        Name = c.String(),
-                        Gender = c.String(),
-                        Role = c.String(),
+                        Name = c.String(maxLength: 50, unicode: false),
+                        Gender = c.String(maxLength: 10, fixedLength: true, unicode: false),
+                        Role = c.String(maxLength: 10, fixedLength: true, unicode: false),
                         DateOfBirth = c.DateTime(),
-                        Street = c.String(),
-                        City = c.String(),
-                        Country = c.String(),
-                        ZipCode = c.String(),
-                        Status = c.String(),
-                        Phone = c.String(),
+                        Street = c.String(maxLength: 250, unicode: false),
+                        City = c.String(maxLength: 50, unicode: false),
+                        Country = c.String(maxLength: 50, unicode: false),
+                        ZipCode = c.String(maxLength: 10, fixedLength: true, unicode: false),
+                        Status = c.String(maxLength: 20, fixedLength: true, unicode: false),
+                        Phone = c.String(maxLength: 50, unicode: false),
                         Restaurant_RestaurantID = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.UserID)
@@ -101,7 +101,7 @@ namespace FYPMustafa.Migrations
                     {
                         TagID = c.String(nullable: false, maxLength: 128),
                         ItemID = c.String(maxLength: 128),
-                        Tag1 = c.String(),
+                        TagName = c.String(),
                     })
                 .PrimaryKey(t => t.TagID)
                 .ForeignKey("dbo.MenuItems", t => t.ItemID)

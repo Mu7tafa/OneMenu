@@ -11,7 +11,7 @@ namespace FYPMustafa.Models
         [Key]
         public string TagID { get; set; }
         public string ItemID { get; set; }
-        public string Tag1 { get; set; }
+        public string TagName { get; set; }
 
         public virtual MenuItem MenuItem { get; set; }
     }
