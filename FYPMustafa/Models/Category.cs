@@ -15,7 +15,7 @@ namespace FYPMustafa.Models
         }
 
         [Key]
-        public string CategoryID { get; set; }
+        public int CategoryID { get; set; }
         public string Name { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

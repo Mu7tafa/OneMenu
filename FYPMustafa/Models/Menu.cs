@@ -9,15 +9,22 @@ namespace FYPMustafa.Models
 {
     public class Menu
     {
+        public Menu()
+        {
+            this.MenuItems = new HashSet<MenuItem>();
+        }
         [Key]
-        public string MenuID { get; set; }
+        public int MenuID { get; set; }
+
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(50)]
+        public string Name { get; set; }
 
         [Column(TypeName = "VARCHAR")]
         [StringLength(50)]
         public string Type { get; set; }
 
-        public string RestaurantID { get; set; }
-
-        public virtual Restaurant Restaurant { get; set; }
+        public int RestaurantID { get; set; }
+        public ICollection<MenuItem> MenuItems { get; set; }
     }
 }

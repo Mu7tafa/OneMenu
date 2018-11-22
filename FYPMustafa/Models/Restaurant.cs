@@ -13,12 +13,10 @@ namespace FYPMustafa.Models
         public Restaurant()
         {
             this.Menus = new HashSet<Menu>();
-            this.MenuItems = new HashSet<MenuItem>();
-            this.UserInformations = new HashSet<UserInformation>();
         }
 
         [Key]
-        public string RestaurantID { get; set; }
+        public int RestaurantID { get; set; }
 
         [Column(TypeName = "VARCHAR")]
         [StringLength(50)]
@@ -40,13 +38,13 @@ namespace FYPMustafa.Models
         [StringLength(10)]
         public string ZipCode { get; set; }
 
-        public string OwnerID { get; set; }
+        public string UserId { get; set; }
+
+        [ForeignKey("UserId")]
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Menu> Menus { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MenuItem> MenuItems { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserInformation> UserInformations { get; set; }
+        public ICollection<Menu> Menus { get; set; }
+        
     }
 }

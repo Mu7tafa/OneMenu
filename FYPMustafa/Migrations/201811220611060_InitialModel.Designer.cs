@@ -13,7 +13,7 @@ namespace FYPMustafa.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201811212232194_InitialModel"; }
+            get { return "201811220611060_InitialModel"; }
         }
         
         string IMigrationMetadata.Source

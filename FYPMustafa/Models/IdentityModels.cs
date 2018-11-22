@@ -1,4 +1,7 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -9,6 +12,36 @@ namespace FYPMustafa.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        [Column(TypeName = "char")]
+        [StringLength(10)]
+        public string Gender { get; set; }
+
+        [Column(TypeName = "char")]
+        [StringLength(10)]
+        public string Role { get; set; }
+
+        public Nullable<System.DateTime> DateOfBirth { get; set; }
+
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(250)]
+        public string Street { get; set; }
+
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(50)]
+        public string City { get; set; }
+
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(50)]
+        public string Country { get; set; }
+
+        [Column(TypeName = "char")]
+        [StringLength(10)]
+        public string ZipCode { get; set; }
+
+        [Column(TypeName = "char")]
+        [StringLength(20)]
+        public string Status { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -20,7 +53,6 @@ namespace FYPMustafa.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public DbSet<UserInformation> UserInformation { get; set; }
         public DbSet<Restaurant> Restaurants { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Menu> Menus { get; set; }

@@ -17,9 +17,9 @@ namespace FYPMustafa.Models
         }
 
         [Key]
-        public string ItemID { get; set; }
+        public int ItemID { get; set; }
 
-        public string RestaurantID { get; set; }
+        public string MenuID { get; set; }
 
         public string CategoryID { get; set; }
 
@@ -33,11 +33,7 @@ namespace FYPMustafa.Models
 
         public string Ingredients { get; set; }
 
-        public virtual Category Category { get; set; }
-        public virtual Restaurant Restaurant { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Picture> Pictures { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tag> Tags { get; set; }
+        public ICollection<Picture> Pictures { get; set; }
+        public ICollection<Tag> Tags { get; set; }
     }
 }

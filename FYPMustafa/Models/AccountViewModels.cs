@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FYPMustafa.Models
 {
@@ -79,6 +81,38 @@ namespace FYPMustafa.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+
+        [Column(TypeName = "char")]
+        [StringLength(10)]
+        public string Gender { get; set; }
+
+        [Column(TypeName = "char")]
+        [StringLength(10)]
+        public string Role { get; set; }
+
+        public Nullable<System.DateTime> DateOfBirth { get; set; }
+
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(250)]
+        public string Street { get; set; }
+
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(50)]
+        public string City { get; set; }
+
+        [Column(TypeName = "char")]
+        [StringLength(10)]
+        public string ZipCode { get; set; }
+
+        [Column(TypeName = "char")]
+        [StringLength(20)]
+        public string Status { get; set; }
+
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(50)]
+        public string PhoneNumber { get; set; }
+
     }
 
     public class ResetPasswordViewModel
