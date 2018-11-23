@@ -153,8 +153,8 @@ namespace FYPMustafa.Controllers
             {
                 var user = new ApplicationUser
                 {
-                    UserName = model.Email,
                     Email = model.Email,
+                    UserName = model.Email,
                     Gender = model.Gender,
                     Street = model.Street,
                     City = model.City,

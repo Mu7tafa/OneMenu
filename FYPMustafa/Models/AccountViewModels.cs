@@ -83,33 +83,33 @@ namespace FYPMustafa.Models
         public string ConfirmPassword { get; set; }
 
 
-        [Column(TypeName = "char")]
+        [DataType(DataType.Text)]
         [StringLength(10)]
         public string Gender { get; set; }
 
-        [Column(TypeName = "char")]
+        [DataType(DataType.Text)]
         [StringLength(10)]
         public string Role { get; set; }
 
         public Nullable<System.DateTime> DateOfBirth { get; set; }
 
-        [Column(TypeName = "VARCHAR")]
+        [DataType(DataType.Text)]
         [StringLength(250)]
         public string Street { get; set; }
 
-        [Column(TypeName = "VARCHAR")]
+        [DataType(DataType.Text)]
         [StringLength(50)]
         public string City { get; set; }
 
-        [Column(TypeName = "char")]
+        [DataType(DataType.PostalCode)]
         [StringLength(10)]
         public string ZipCode { get; set; }
 
-        [Column(TypeName = "char")]
+        [DataType(DataType.Text)]
         [StringLength(20)]
-        public string Status { get; set; }
+        public string UserName { get; set; }
 
-        [Column(TypeName = "VARCHAR")]
+        [DataType(DataType.PhoneNumber)]
         [StringLength(50)]
         public string PhoneNumber { get; set; }
 
