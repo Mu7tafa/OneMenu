@@ -1,4 +1,5 @@
 ﻿using FYPMustafa.Models;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,8 +23,11 @@ namespace FYPMustafa.Controllers
         // GET: Restaurant
         public ActionResult Index()
         {
-            //Change the id to the logged in user
-            var restaurant = _context.Restaurants.SingleOrDefault(c => c.UserId == "1");
+            if(!System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
+                return RedirectToAction("Login", "Account");
+
+            var uid = User.Identity.GetUserId();
+            var restaurant = _context.Restaurants.SingleOrDefault(c => c.UserId == uid);
             if(restaurant == null)
                 return View();
             return View(restaurant);
@@ -32,6 +36,7 @@ namespace FYPMustafa.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(Restaurant restaurant)
         {
+            restaurant.UserId = User.Identity.GetUserId();
             _context.Restaurants.Add(restaurant);
             _context.SaveChanges();
             return RedirectToAction("Index", "Restaurant");

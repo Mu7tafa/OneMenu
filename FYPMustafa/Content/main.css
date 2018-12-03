@@ -303,8 +303,10 @@ input {
   color: #808080;
 }
 
-.dropd{
-    border:none;
+.dropd {
+    border: none;
+    padding-right: 7.5em;
+    outline: none;
 }
 
 .input--style-2:-moz-placeholder {

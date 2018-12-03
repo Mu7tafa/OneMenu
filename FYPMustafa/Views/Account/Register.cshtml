@@ -67,7 +67,7 @@
                                 @Html.DropDownListFor(model => model.Gender, new List<SelectListItem>{
                                 new SelectListItem{ Text="Male", Value="Male"},
                                 new SelectListItem{ Text="Female", Value="Female"}
-                                }, "--- Select your gender ---", new { @class = "input--style-2 dropd" }
+                                }, "Gender", new { @class = "input--style-2 dropd" }
                                 )
                                 @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
                             </div>
