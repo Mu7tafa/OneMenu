@@ -34,3 +34,7 @@ input {
 .input-group {
     width:100%;
 }
+
+select{
+    max-width: none;
+}

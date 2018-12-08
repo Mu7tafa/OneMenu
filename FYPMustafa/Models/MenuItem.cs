@@ -25,6 +25,10 @@ namespace FYPMustafa.Models
 
         [Column(TypeName = "VARCHAR")]
         [StringLength(250)]
+        public string Name { get; set; }
+
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(250)]
         public string Status { get; set; }
 
         public Nullable<decimal> Price { get; set; }

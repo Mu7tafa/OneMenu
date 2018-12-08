@@ -1,0 +1,65 @@
+﻿@model FYPMustafa.ViewModels.MenuItemViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Restaurant.css" rel="stylesheet" />
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="mainR">
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.MenuItems.MenuID)
+        @Html.DropDownListFor(m => m.MenuItems.MenuID, new SelectList(Model.Menus, "MenuID", "Name"), "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MenuItems.MenuID)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.MenuItems.CategoryID)
+        @Html.DropDownListFor(m => m.MenuItems.CategoryID, new SelectList(Model.Categories, "CategoryID", "Name"), "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MenuItems.CategoryID)
+    </div>
+    <div class="form-group input-group">
+        @Html.LabelFor(model => model.MenuItems.Name)
+        @Html.TextBoxFor(model => model.MenuItems.Name)
+        @Html.ValidationMessageFor(model => model.MenuItems.Name, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group input-group">
+        @Html.LabelFor(model => model.MenuItems.Status)
+        @Html.TextBoxFor(model => model.MenuItems.Status)
+        @Html.ValidationMessageFor(model => model.MenuItems.Status, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group input-group">
+        @Html.LabelFor(model => model.MenuItems.Price)
+        @Html.TextBoxFor(model => model.MenuItems.Price)
+        @Html.ValidationMessageFor(model => model.MenuItems.Price, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group input-group">
+        @Html.LabelFor(model => model.MenuItems.Description)
+        @Html.TextBoxFor(model => model.MenuItems.Description)
+        @Html.ValidationMessageFor(model => model.MenuItems.Description, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group input-group">
+        @Html.LabelFor(model => model.MenuItems.Ingredients)
+        @Html.TextBoxFor(model => model.MenuItems.Ingredients)
+        @Html.ValidationMessageFor(model => model.MenuItems.Ingredients, "", new { @class = "text-danger" })
+    </div>
+    <button type="submit" style="width:100%" class="btn btn-primary">Save</button>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -210,9 +210,11 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\MenuItemsController.cs" />
     <Compile Include="Controllers\Api\MenusController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\MenuItemController.cs" />
     <Compile Include="Controllers\RestaurantController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -229,6 +231,14 @@
     <Compile Include="Migrations\201812081636095_MenuBit.Designer.cs">
       <DependentUpon>201812081636095_MenuBit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812081845512_RestuarantID in categories.cs" />
+    <Compile Include="Migrations\201812081845512_RestuarantID in categories.Designer.cs">
+      <DependentUpon>201812081845512_RestuarantID in categories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812081930444_MenuItem Name.cs" />
+    <Compile Include="Migrations\201812081930444_MenuItem Name.Designer.cs">
+      <DependentUpon>201812081930444_MenuItem Name.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -241,6 +251,7 @@
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\MenuItemViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -307,9 +318,12 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Restaurant\Index.cshtml" />
     <Content Include="Views\Menu\Create.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\MenuItem\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\Menu\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -333,6 +347,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812081636095_MenuBit.resx">
       <DependentUpon>201812081636095_MenuBit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812081845512_RestuarantID in categories.resx">
+      <DependentUpon>201812081845512_RestuarantID in categories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812081930444_MenuItem Name.resx">
+      <DependentUpon>201812081930444_MenuItem Name.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
