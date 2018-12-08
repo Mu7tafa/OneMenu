@@ -17,12 +17,17 @@ namespace FYPMustafa.Models
         public int MenuID { get; set; }
 
         [Column(TypeName = "VARCHAR")]
+        [Required]
         [StringLength(50)]
         public string Name { get; set; }
 
+        [Required]
         [Column(TypeName = "VARCHAR")]
         [StringLength(50)]
         public string Type { get; set; }
+        
+        [StringLength(250)]
+        public string ImagePath { get; set; }
 
         public int RestaurantID { get; set; }
         public ICollection<MenuItem> MenuItems { get; set; }
