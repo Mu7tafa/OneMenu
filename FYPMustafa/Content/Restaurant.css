@@ -13,10 +13,10 @@ label {
     font-weight: 600;
 }
 
-input {
+input, .tagsinput {
     background-color: #fafafa;
     border-radius: 3px;
-    border: 1px solid rgba(0,0,0,.12);
+    border: 1px solid rgba(0,0,0,.12) !important;
     box-shadow: none;
     box-sizing: border-box;
     margin: 0 0 4px;
@@ -24,9 +24,9 @@ input {
     padding: 8px;
     width: 100%;
 }
-    input:focus {
-        background-color: #fff;
-        border-color: #1f24cc;
+    input:focus, .tagsinput:focus {
+        background-color: #fff !important;
+        border-color: #1f24cc !important;
         box-shadow: none;
         outline: 0;
     }
@@ -37,4 +37,18 @@ input {
 
 select{
     max-width: none;
+}
+
+.tagsinput {
+    width: unset !important;
+    min-height: unset !important;
+    height: unset !important;
+}
+
+.labelB {
+    font-size: 16px;
+}
+
+.tcenter{
+    text-align:center;
 }

@@ -42,8 +42,13 @@ namespace FYPMustafa.Controllers
                 Categories = categories,
                 Menus = menus
             };
+            viewModel.tags = "fsdf, fsdkfjd, fsd";
 
             return View(viewModel);
+        }
+        public ActionResult Save(MenuItemViewModel menuItemViewModel)
+        {
+            return View("Create", menuItemViewModel);
         }
     }
 }

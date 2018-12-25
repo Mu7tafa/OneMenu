@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace FYPMustafa.Controllers
 {
+    [Authorize]
     public class MenuController : Controller
     {
         private ApplicationDbContext _context;

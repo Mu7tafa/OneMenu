@@ -1,19 +1,18 @@
 ﻿@model FYPMustafa.Models.Category
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <link href="~/Content/Restaurant.css" rel="stylesheet" />
 
-<h2>Category</h2>
+<h2>Edit</h2>
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
+    @Html.HiddenFor(model => model.CategoryID)
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
     <div class="mainR">

@@ -12,6 +12,7 @@ namespace FYPMustafa.ViewModels
         public IEnumerable<Menu> Menus { get; set; }
 
         public MenuItem MenuItems { get; set; }
+        public String tags { get; set; }
 
     }
 }

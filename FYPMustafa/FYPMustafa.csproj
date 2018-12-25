@@ -260,6 +260,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\bg-01.jpg" />
     <Content Include="Content\Images\bg-heading-02.jpg" />
+    <Content Include="Content\jquery.tagsinput.css" />
+    <Content Include="Content\jquery.tagsinput.js" />
     <Content Include="Content\main.css" />
     <Content Include="Content\Restaurant.css" />
     <Content Include="favicon.ico" />
@@ -282,7 +284,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -318,8 +322,12 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Restaurant\Index.cshtml" />
     <Content Include="Views\Menu\Create.cshtml" />
-    <Content Include="Views\Category\Create.cshtml" />
     <Content Include="Views\MenuItem\Create.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Category\Delete.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
