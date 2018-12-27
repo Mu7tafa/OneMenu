@@ -16,52 +16,57 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="mainR">
+<div class="mainR">
 
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            @Html.LabelFor(m => m.MenuItems.MenuID)
-            @Html.DropDownListFor(m => m.MenuItems.MenuID, new SelectList(Model.Menus, "MenuID", "Name"), "", new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.MenuItems.MenuID)
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.MenuItems.CategoryID)
-            @Html.DropDownListFor(m => m.MenuItems.CategoryID, new SelectList(Model.Categories, "CategoryID", "Name"), "", new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.MenuItems.CategoryID)
-        </div>
-        <div class="form-group input-group">
-            @Html.LabelFor(model => model.MenuItems.Name)
-            @Html.TextBoxFor(model => model.MenuItems.Name)
-            @Html.ValidationMessageFor(model => model.MenuItems.Name, "", new { @class = "text-danger" })
-        </div>
-        <div class="form-group input-group">
-            @Html.LabelFor(model => model.MenuItems.Status)
-            @Html.TextBoxFor(model => model.MenuItems.Status)
-            @Html.ValidationMessageFor(model => model.MenuItems.Status, "", new { @class = "text-danger" })
-        </div>
-        <div class="form-group input-group">
-            @Html.LabelFor(model => model.MenuItems.Price)
-            @Html.TextBoxFor(model => model.MenuItems.Price)
-            @Html.ValidationMessageFor(model => model.MenuItems.Price, "", new { @class = "text-danger" })
-        </div>
-        <div class="form-group input-group">
-            @Html.LabelFor(model => model.MenuItems.Description)
-            @Html.TextBoxFor(model => model.MenuItems.Description)
-            @Html.ValidationMessageFor(model => model.MenuItems.Description, "", new { @class = "text-danger" })
-        </div>
-        <div class="form-group input-group">
-            @Html.LabelFor(model => model.MenuItems.Ingredients)
-            @Html.TextBoxFor(model => model.MenuItems.Ingredients)
-            @Html.ValidationMessageFor(model => model.MenuItems.Ingredients, "", new { @class = "text-danger" })
-        </div>
-        <div class="form-group input-group">
-            @Html.LabelFor(model => model.MenuItems.Tags)
-            @Html.TextBoxFor(model => model.tags, new { id = "tags", name = "tags" })
-            @Html.ValidationMessageFor(model => model.MenuItems.Tags, "", new { @class = "text-danger" })
-        </div>
-        <button type="submit" style="width:100%" class="btn btn-primary">Save</button>
+    <div class="form-group">
+        @Html.LabelFor(m => m.MenuItems.MenuID)
+        @Html.DropDownListFor(m => m.MenuItems.MenuID, new SelectList(Model.Menus, "MenuID", "Name"), "Please select Menu", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MenuItems.MenuID)
     </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.MenuItems.CategoryID)
+        @Html.DropDownListFor(m => m.MenuItems.CategoryID, new SelectList(Model.Categories, "CategoryID", "Name"), "Please select Category", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MenuItems.CategoryID)
+    </div>
+    <div class="form-group input-group">
+        @Html.LabelFor(model => model.MenuItems.Name)
+        @Html.TextBoxFor(model => model.MenuItems.Name)
+        @Html.ValidationMessageFor(model => model.MenuItems.Name, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group input-group">
+        @Html.LabelFor(model => model.MenuItems.Status)
+        @Html.TextBoxFor(model => model.MenuItems.Status)
+        @Html.ValidationMessageFor(model => model.MenuItems.Status, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group input-group">
+        @Html.LabelFor(model => model.MenuItems.Price)
+        @Html.TextBoxFor(model => model.MenuItems.Price)
+        @Html.ValidationMessageFor(model => model.MenuItems.Price, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group input-group">
+        @Html.LabelFor(model => model.MenuItems.Description)
+        @Html.TextBoxFor(model => model.MenuItems.Description)
+        @Html.ValidationMessageFor(model => model.MenuItems.Description, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group input-group">
+        @Html.LabelFor(model => model.MenuItems.Ingredients)
+        @Html.TextBoxFor(model => model.MenuItems.Ingredients)
+        @Html.ValidationMessageFor(model => model.MenuItems.Ingredients, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group input-group">
+        @Html.LabelFor(model => model.MenuItems.Tags)
+        @Html.TextBoxFor(model => model.tags, new { id = "tags", name = "tags" })
+        @Html.ValidationMessageFor(model => model.MenuItems.Tags, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group input-group">
+        @Html.LabelFor(model => model.Files)
+        @Html.TextBoxFor(model => model.Files, "", new { @type = "file", @multiple = "multiple" })
+        @Html.ValidationMessageFor(model => model.Files, "", new { @class = "text-danger" })
+    </div>
+    <button type="submit" style="width:100%" class="btn btn-primary">Save</button>
+</div>
 }
 <script>
     $('#tags').tagsInput();

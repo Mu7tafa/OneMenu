@@ -32,9 +32,8 @@ namespace FYPMustafa.Controllers
         }
         public ActionResult Save(Menu menu, HttpPostedFileBase file)
         {
-            var uid = User.Identity.GetUserId();
-            var restaurant = _context.Restaurants.SingleOrDefault(c => c.UserId == uid);
-            if (restaurant == null)
+            var rID = new RestaurantHelper().GetRestaurant(User.Identity.GetUserId());
+            if (rID == 0)
                 return RedirectToAction("Index", "Restaurant");
             if (file != null)
             {
@@ -47,7 +46,7 @@ namespace FYPMustafa.Controllers
 
             }
 
-            menu.RestaurantID = restaurant.RestaurantID;
+            menu.RestaurantID = rID;
             _context.Menus.Add(menu);
             _context.SaveChanges();
             return RedirectToAction("Index", "Restaurant");

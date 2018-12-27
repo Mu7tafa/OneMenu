@@ -14,5 +14,7 @@ namespace FYPMustafa.ViewModels
         public MenuItem MenuItems { get; set; }
         public String tags { get; set; }
 
+        public FileModel Files { get; set; }
+
     }
 }

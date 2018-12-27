@@ -19,9 +19,11 @@ namespace FYPMustafa.Models
         [Key]
         public int ItemID { get; set; }
 
-        public string MenuID { get; set; }
+        [Display(Name = "Menu")]
+        public int MenuID { get; set; }
 
-        public string CategoryID { get; set; }
+        [Display(Name = "Category")]
+        public int CategoryID { get; set; }
 
         [Column(TypeName = "VARCHAR")]
         [StringLength(250)]
@@ -36,6 +38,12 @@ namespace FYPMustafa.Models
         public string Description { get; set; }
 
         public string Ingredients { get; set; }
+
+        [ForeignKey("CategoryID")]
+        public virtual Category Category { get; set; }
+
+        [ForeignKey("MenuID")]
+        public virtual Menu Menu { get; set; }
 
         public ICollection<Picture> Pictures { get; set; }
         public ICollection<Tag> Tags { get; set; }
