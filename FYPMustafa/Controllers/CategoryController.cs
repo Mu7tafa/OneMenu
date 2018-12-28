@@ -19,11 +19,10 @@ namespace FYPMustafa.Controllers
         // GET: Category
         public ActionResult Index()
         {
-            var uid = User.Identity.GetUserId();
-            var restaurant = db.Restaurants.SingleOrDefault(c => c.UserId == uid);
-            if (restaurant == null)
+            var rID = new RestaurantHelper().GetRestaurant(User.Identity.GetUserId());
+            if (rID == 0)
                 return RedirectToAction("Index", "Restaurant");
-            return View(db.Categories.Where(c=>c.RestaurantID == restaurant.RestaurantID).ToList());
+            return View(db.Categories.Where(c => c.RestaurantID == rID).ToList());
         }
 
         // GET: Category/Details/5

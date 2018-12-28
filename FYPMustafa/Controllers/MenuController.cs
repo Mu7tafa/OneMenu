@@ -24,7 +24,10 @@ namespace FYPMustafa.Controllers
         // GET: Menu
         public ActionResult Index()
         {
-            return View();
+            var rID = new RestaurantHelper().GetRestaurant(User.Identity.GetUserId());
+            if (rID == 0)
+                return RedirectToAction("Index", "Restaurant");
+            return View(_context.Menus.Where(c => c.RestaurantID == rID).ToList());
         }
         public ActionResult Create()
         {

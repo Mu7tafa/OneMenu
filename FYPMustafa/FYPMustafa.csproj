@@ -273,11 +273,14 @@
     <Content Include="Content\jquery.tagsinput.css" />
     <Content Include="Content\jquery.tagsinput.js" />
     <Content Include="Content\main.css" />
+    <Content Include="Content\MenuCard.css" />
     <Content Include="Content\Restaurant.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Menu\4f20974a-593d-4f35-94c7-baf95bfc5ec6Sarah.png" />
+    <Content Include="Images\Menu\9317b40d-a3e2-49dc-8878-1bc5365c8618a77ebd79-0a54-4f80-89e8-2dfa6612107b.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -338,11 +341,11 @@
     <Content Include="Views\Category\Edit.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
+    <Content Include="Views\Menu\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\MenuItems\" />
-    <Folder Include="Images\Menu\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
