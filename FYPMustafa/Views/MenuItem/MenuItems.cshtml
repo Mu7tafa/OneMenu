@@ -1,0 +1,90 @@
+﻿@model IEnumerable<FYPMustafa.Models.MenuItem>
+
+@{
+    ViewBag.Title = "MenuItems";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/b-1.5.4/b-html5-1.5.4/r-2.2.2/sl-1.2.6/datatables.min.css" />
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/b-1.5.4/b-html5-1.5.4/r-2.2.2/sl-1.2.6/datatables.min.js"></script>
+
+
+<h2>Menu Items</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table id="jtable" class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Category.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Menu.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ingredients)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Menu.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ingredients)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ItemID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ItemID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ItemID })
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+@section Scripts {
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/b-1.5.4/b-html5-1.5.4/r-2.2.2/sl-1.2.6/datatables.min.js"></script>
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#jtable').DataTable();
+    });
+</script>

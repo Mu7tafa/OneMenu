@@ -1,0 +1,230 @@
+﻿body{
+    padding-top:25px;
+}
+
+.navbar-default {
+margin-bottom:0px !important;
+border-radius:0px;
+}
+
+
+.fullscreen {
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -flex-direction: column;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+.fullscreen {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://images.unsplash.com/photo-1472393365320-db77a5abbecc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.body-content {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.prom {
+    background: #1995dc;
+    padding-top: 20px;
+    position: relative;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.text-center {
+    text-align: center;
+}
+.prom h2 {
+    color: white;
+    font-size: 4rem;
+}
+.prom p {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 25px;
+    color: white;
+    line-height: 1.9;
+}
+.prom a {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 2px solid white;
+    background: transparent;
+    text-transform: uppercase;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.wrapper .fa:hover {
+    color: #000 !important
+}
+
+.address .fa:hover {
+    padding-left: 0 !important
+}
+
+.fa:hover {
+    opacity: 1;
+    text-decoration: none
+}
+
+.ft {
+    padding-left: 5px;
+    opacity: 1;
+    color: #fff;
+    text-decoration: none
+}
+
+    .ft:hover {
+        color: #fff !important;
+        opacity: .5 !important
+    }
+
+.wrapper {
+    display: block;
+    width: 100%;
+    margin: 0;
+    font-size:12px;
+    padding: 0;
+    text-align: left;
+    word-wrap: break-word
+}
+
+#topbar * {
+    font-weight: normal;
+    margin: 0
+}
+
+.fl_right, .imgr {
+    float: right;
+    line-height: 34px;
+    margin-right: -44px !important;
+}
+
+.fl_left, .imgl {
+    float: left
+}
+
+.nospace {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+#topbar ul li {
+    display: inline-block;
+    margin-right: 10px;
+    padding-right: 15px;
+    color: #000 !important;
+    border-color: #000;
+    border-right: 1px solid;
+    font-family: Verdana,Geneva,sans-serif
+}
+
+#topbar ul li {
+    border-color: rgba(0,0,0,.2)
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 12px !important;
+    color: #000;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.clear, .clear::after, .group, .group::after {
+    clear: both
+}
+
+.lg {
+    font-size: 22px;
+    color: #fff;
+    line-height: 1;
+    font-weight: normal;
+    font-style: italic;
+    text-transform: capitalize;
+    font-family: Georgia,"Times New Roman",Times,serif
+}
+
+.nospace {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+.hoc {
+    display: block;
+    margin: 0 auto
+}
+.brandn {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.site-heading {
+    padding: 200px 0 150px;
+    color: white;
+    text-align: center;
+}
+@media only screen and (min-width: 768px) {
+    .site-heading {
+        padding: 120px 0;
+    }
+}
+.site-heading .subheading {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.1;
+    display: block;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .site-heading h1 {
+        font-size: 80px;
+    }
+    .subheading {
+        font-size: 30px;
+    }
+}
+.subheading {
+    line-height: 1.1;
+    display: block;
+}
+
+
+
+.service-box {
+    max-width: 400px;
+}
+
+
+.benefits {
+    margin-left: 0px;
+    text-align: center;
+    padding-bottom: 100px;
+    box-shadow: inset 0 7px 20px -7px rgb(0, 0, 0);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://images.unsplash.com/photo-1540202404-69f85b6fd934?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=787&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.text-primary {
+    color: white !important;
+}
+.service-box h3 {
+    color: white !important;
+}

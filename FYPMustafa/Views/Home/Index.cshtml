@@ -1,31 +1,85 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<link href="~/Content/Home.css" rel="stylesheet" />
+
+<div class="fullscreen">
+    <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+            <h1 style="color:white;">OneMenu</h1>
+            <span class="subheading">Menus Made Easy</span>
+        </div>
+    </div>
+</div>
+<div class="prom">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h2 class="tm-section-title">Modern and easy to use menus</h2>
+                <p class="tm-color-white tm-section-subtitle">Create your own today</p>
+                <a href="#" id="news" class="tm-color-white tm-btn-white-bordered">Register</a>
+            </div>
+
+        </div>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+<div class="benefits">
+    <div style="height: 100px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="tm-section-down-arrow">
+            <polygon fill="#1995dc" points="0,0  100,0  50,5"></polygon>
+        </svg>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 style="margin-bottom:75px; margin-top: 40px !important;" class="text-primary section-heading">Why use OneMenu?</h2>
+                    <hr class="my-4">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row" style="padding-top:30px;">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box mt-5 mx-auto">
+                        <i class="fas fa-4x fa-calendar-check text-primary mb-3 sr-icon-1" data-sr-id="0" style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0.2s, transform 0.6s cubic-bezier(0.5, 0, 0, 1) 0.2s;"></i>
+                        <h3 class="mb-3">Up to date</h3>
+                        <p class="text-muted mb-0">Edit your menus anytime update available items.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box mt-5 mx-auto">
+                        <i class="fas fa-4x fa-layer-group text-primary mb-3 sr-icon-2" data-sr-id="2" style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0.4s, transform 0.6s cubic-bezier(0.5, 0, 0, 1) 0.4s;"></i>
+                        <h3 class="mb-3">One in many</h3>
+                        <p class="text-muted mb-0">Let your users access all your menus with one click!</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box mt-5 mx-auto">
+                        <i class="fas fa-4x fas fa-edit text-primary mb-3 sr-icon-3" data-sr-id="3" style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0.6s, transform 0.6s cubic-bezier(0.5, 0, 0, 1) 0.6s;"></i>
+                        <h3 class="mb-3">Easy to manage</h3>
+                        <p class="text-muted mb-0">Create new and edit new menus in few minutes.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box mt-5 mx-auto">
+                        <i class="fas fa-4x fa-heart text-primary mb-3 sr-icon-4" data-sr-id="4" style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0.8s, transform 0.6s cubic-bezier(0.5, 0, 0, 1) 0.8s;"></i>
+                        <h3 class="mb-3">Made with Love</h3>
+                        <p class="text-muted mb-0">You have to make your websites with love these days!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div class="container">
+    <div class="jumbotron">
+        <h1>ASP.NET</h1>
+        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
     </div>
 </div>

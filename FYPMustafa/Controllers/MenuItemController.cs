@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -24,9 +25,13 @@ namespace FYPMustafa.Controllers
         }
 
         // GET: MenuItem
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            return View(_context.MenuItems.Where(c => c.MenuID == id).ToList());
         }
         public ActionResult Create()
         {
