@@ -1,6 +1,5 @@
 ﻿body {
     padding-top: 50px;
-    padding-bottom: 20px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +20,85 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.fcolor {
+    background-color: #00838f !important;
+    bottom: 0;
+    color: #fff;
+}
+.font-small {
+    font-size: .9rem;
+}
+
+.flex-center {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%;
+}
+.mb-5, .my-5 {
+    margin-bottom: 3rem !important;
+}
+footer.page-footer .footer-copyright {
+    overflow: hidden;
+    background-color: rgba(0,0,0,.2);
+    color: rgba(255,255,255,.6);
+}
+.py-5 {
+    padding-top: 8rem !important;
+    padding-bottom: 4rem !important;
+}
+
+.py-3 {
+    padding-bottom: 1rem !important;
+}
+.white-text {
+    color: #fff !important;
+}
+
+.mr-md-5, .mx-md-5 {
+    margin-right: 3rem!important;
+}
+.footer-copyright {
+    font-size: 14px;
+    padding: 16px;
+}
+
+
+
+
+/*Dash*/
+
+.mx-auto {
+    margin-right: auto !important;
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+
+.body-content {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 }

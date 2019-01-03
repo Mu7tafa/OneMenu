@@ -5,30 +5,33 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/Content/Restaurant.css" rel="stylesheet" />
-<div style="padding:100px;">
+<div class="container">
+    <div style="padding:100px;">
 
-<h2>Delete</h2>
+        <h2>Delete</h2>
 
-<h5 class = "text-danger">Are you sure you want to delete this category?</h5>
-<div>
+        <h5 class="text-danger">Are you sure you want to delete this category?</h5>
+        <div>
 
-    <div class="mainR tcenter" >
-        <div class="form-group input-group">
-            @Html.LabelFor(model => model.Name, new { @class = "labelB" })
-            @Html.DisplayFor(model => model.Name, new { @class = "labelB" })
+            <div class="mainR tcenter">
+                <div class="form-group input-group">
+                    @Html.LabelFor(model => model.Name, new { @class = "labelB" })
+                    @Html.DisplayFor(model => model.Name, new { @class = "labelB" })
 
+                </div>
+                <input type="submit" value="Delete" style="width:80%" class="btn btn-default" />
+            </div>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }
         </div>
-        <input type="submit" value="Delete" style="width:80%" class="btn btn-default" />
     </div>
 
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-             |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
-</div>
 </div>
