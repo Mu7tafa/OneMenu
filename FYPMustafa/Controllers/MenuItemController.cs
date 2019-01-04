@@ -3,6 +3,7 @@ using FYPMustafa.ViewModels;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -29,7 +30,13 @@ namespace FYPMustafa.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                var rID = new RestaurantHelper().GetRestaurant(User.Identity.GetUserId());
+                if (rID == 0)
+                    return RedirectToAction("Index", "Restaurant");
+                var menus = _context.Database
+                        .SqlQuery<MenuItem>("SELECT ItemID, Status, Price, Description, Ingredients, CategoryID, MenuItems.MenuID, MenuItems.Name FROM Menus, MenuItems where Menus.RestaurantID = "+ rID +" And Menus.MenuID = MenuItems.MenuID")
+                        .ToList<MenuItem>();
+                return View(menus); ;
             }
             return View(_context.MenuItems.Where(c => c.MenuID == id).ToList());
         }

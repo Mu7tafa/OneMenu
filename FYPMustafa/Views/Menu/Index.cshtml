@@ -23,11 +23,12 @@
         <div class="col-md-4">
             <div class="card bg-light">
                 <img class="card-img-top"  src='@Url.Action("Menu", "Images", new { id = item.ImagePath })' alt="Image 1">
-                <div class="card-body">
+                <div class="card-body" style="text-align:center;">
                     <h5 class="card-title border-bottom pb-3">@item.Name</h5>
                     <p class="card-text">@item.Type</p>
-                    <a href="#" class="btn btn-sm btn-info">View items <i class="fas fa-angle-double-right"></i></a>
-                    <a href="#" class="btn btn-sm btn-danger float-right">Delete menu <i class="fas fa-remove"></i></a>
+                    <a href="@Url.Action("Index","MenuItem", new { id = item.MenuID })" class="btn btn-sm btn-info">View <i class="fas fa-angle-double-right"></i></a>
+                    <a href="@Url.Action("Edit","Menu", new { id = item.MenuID })" class="btn btn-sm btn-info">Edit <i class="fas fa-edit"></i></a>
+                    <a href="#" class="btn btn-sm btn-danger float-right">Delete <i class="fas fa-remove"></i></a>
                 </div>
             </div>
         </div>

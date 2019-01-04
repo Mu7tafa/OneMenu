@@ -94,13 +94,8 @@ namespace FYPMustafa.Controllers
         {
             if (ModelState.IsValid)
             {
-                var uid = User.Identity.GetUserId();
-                var restaurant = db.Restaurants.SingleOrDefault(c => c.UserId == uid);
-                if (restaurant == null)
-                    return RedirectToAction("Index", "Restaurant");
-
-                category.RestaurantID = restaurant.RestaurantID;
-                db.Entry(category).State = EntityState.Modified;
+                var menuDB = db.Categories.Single(c => c.CategoryID == category.CategoryID);
+                menuDB.Name = category.Name;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

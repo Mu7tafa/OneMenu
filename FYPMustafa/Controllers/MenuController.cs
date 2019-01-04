@@ -2,8 +2,10 @@
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -53,6 +55,36 @@ namespace FYPMustafa.Controllers
             _context.Menus.Add(menu);
             _context.SaveChanges();
             return RedirectToAction("Index", "Restaurant");
+        }
+
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Menu menu = _context.Menus.Find(id);
+            if (menu == null)
+            {
+                return HttpNotFound();
+            }
+            return View(menu);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "MenuID,Name,Type")] Menu menu)
+        {
+            if (ModelState.IsValid)
+            {
+
+                var menuDB = _context.Menus.Single(c => c.MenuID == menu.MenuID);
+                menuDB.Name = menu.Name;
+                menuDB.Type = menu.Type;
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(menu);
         }
 
     }

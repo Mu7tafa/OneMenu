@@ -346,6 +346,7 @@
     <Content Include="Views\MenuItem\MenuItems.cshtml" />
     <Content Include="Views\MenuItem\Index.cshtml" />
     <Content Include="Views\Home\Dashboard.cshtml" />
+    <Content Include="Views\Menu\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
