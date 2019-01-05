@@ -86,6 +86,30 @@ namespace FYPMustafa.Controllers
             }
             return View(menu);
         }
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Menu menu = _context.Menus.Find(id);
+            if (menu == null)
+            {
+                return HttpNotFound();
+            }
+            return View(menu);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Menu menu = _context.Menus.Find(id);
+            _context.Menus.Remove(menu);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
 
     }
 }

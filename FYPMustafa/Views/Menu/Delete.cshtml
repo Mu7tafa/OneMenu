@@ -1,4 +1,4 @@
-﻿@model FYPMustafa.Models.Category
+﻿@model FYPMustafa.Models.Menu
 
 @{
     ViewBag.Title = "Delete";
@@ -10,7 +10,7 @@
 
         <h2>Delete</h2>
 
-        <h5 class="text-danger">Are you sure you want to delete this category?</h5>
+        <h5 class="text-danger">Are you sure you want to delete this Menu?</h5>
         <div>
 
             <div class="mainR tcenter">
@@ -24,11 +24,11 @@
                     @Html.AntiForgeryToken()
                     <input type="submit" value="Delete" style="width:80%" class="btn btn-default" />
                 }
-                </div>
-                <div class="form-actions no-color">
-                    |
-                    @Html.ActionLink("Back to List", "Index")
-                </div>
+            </div>
+            <div class="form-actions no-color">
+                |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
         </div>
     </div>
 

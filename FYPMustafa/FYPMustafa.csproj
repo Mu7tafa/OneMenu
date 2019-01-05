@@ -343,10 +343,12 @@
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\Menu\Index.cshtml" />
-    <Content Include="Views\MenuItem\MenuItems.cshtml" />
     <Content Include="Views\MenuItem\Index.cshtml" />
     <Content Include="Views\Home\Dashboard.cshtml" />
     <Content Include="Views\Menu\Edit.cshtml" />
+    <Content Include="Views\MenuItem\Delete.cshtml" />
+    <Content Include="Views\Menu\Delete.cshtml" />
+    <Content Include="Views\MenuItem\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

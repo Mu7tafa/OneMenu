@@ -1,16 +1,17 @@
-﻿@model FYPMustafa.Models.Category
+﻿@model FYPMustafa.Models.MenuItem
 
 @{
     ViewBag.Title = "Delete";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <link href="~/Content/Restaurant.css" rel="stylesheet" />
 <div class="container">
     <div style="padding:100px;">
 
         <h2>Delete</h2>
 
-        <h5 class="text-danger">Are you sure you want to delete this category?</h5>
+        <h5 class="text-danger">Are you sure you want to delete this MenuItem?</h5>
         <div>
 
             <div class="mainR tcenter">
@@ -22,11 +23,10 @@
                 @using (Html.BeginForm())
                 {
                     @Html.AntiForgeryToken()
-                    <input type="submit" value="Delete" style="width:80%" class="btn btn-default" />
+                    <input type="submit" value="Delete" style="width:80%; margin-top:10px;" class="btn btn-default" />
                 }
                 </div>
                 <div class="form-actions no-color">
-                    |
                     @Html.ActionLink("Back to List", "Index")
                 </div>
         </div>

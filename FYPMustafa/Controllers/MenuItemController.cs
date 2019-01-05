@@ -103,5 +103,86 @@ namespace FYPMustafa.Controllers
             }
             return Tags;
         }
+        public ActionResult Edit(int? id)
+        {
+            var rID = new RestaurantHelper().GetRestaurant(User.Identity.GetUserId());
+            if (rID == 0)
+                return RedirectToAction("Index", "Restaurant");
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            _context.Configuration.ProxyCreationEnabled = false;
+            MenuItem menuitem = _context.MenuItems.Include(c => c.Tags).SingleOrDefault(c => c.ItemID == id);
+            if (menuitem == null)
+            {
+                return HttpNotFound();
+            }
+
+            var menus = _context.Menus.Where(c => c.RestaurantID == rID).ToList();
+            var categories = _context.Categories.Where(c => c.RestaurantID == rID).ToList();
+
+            var viewModel = new MenuItemViewModel
+            {
+                MenuItems = menuitem,
+                Categories = categories,
+                Menus = menus
+            };
+            viewModel.tags = "";
+            foreach (Tag tagg in menuitem.Tags)
+            {
+                viewModel.tags = viewModel.tags + "," + tagg.TagName;
+            }
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(MenuItemViewModel menuItem)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Tags.RemoveRange(_context.Tags.Where(x => x.ItemID == menuItem.MenuItems.ItemID));
+                _context.SaveChanges();
+
+                var menuItemDB = _context.MenuItems.Single(c => c.ItemID == menuItem.MenuItems.ItemID);
+                menuItemDB.Name = menuItem.MenuItems.Name;
+                menuItemDB.MenuID = menuItem.MenuItems.MenuID;
+                menuItemDB.CategoryID = menuItem.MenuItems.CategoryID;
+                menuItemDB.Price = menuItem.MenuItems.Price;
+                menuItemDB.Ingredients = menuItem.MenuItems.Ingredients;
+                menuItemDB.Tags = SaveTags(menuItem.tags);
+                menuItemDB.Status = menuItem.MenuItems.Status;
+                menuItemDB.Description = menuItem.MenuItems.Description;
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(menuItem);
+        }
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            MenuItem menuItem = _context.MenuItems.Find(id);
+            if (menuItem == null)
+            {
+                return HttpNotFound();
+            }
+            return View(menuItem);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            MenuItem menuItem = _context.MenuItems.Find(id);
+            _context.MenuItems.Remove(menuItem);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
