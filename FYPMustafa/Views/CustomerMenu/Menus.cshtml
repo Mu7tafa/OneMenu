@@ -1,0 +1,34 @@
+﻿@model IEnumerable<FYPMustafa.Models.Menu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/MenuCard.css" rel="stylesheet" />
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<h2 style="text-align:center;">Menus</h2>
+<div class="container">
+    <h1 style="text-align:center;">Restaurant Name</h1>
+    <hr />
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4">
+                <div class="card bg-light">
+                    <img class="card-img-top" src='@Url.Action("Menu", "Images", new { id = item.ImagePath })' alt="Menu Image">
+                    <div class="card-body" style="text-align:center;">
+                        <h5 class="card-title border-bottom pb-3">@item.Name</h5>
+                        <p class="card-text">@item.Type</p>
+                        <a href="@Url.Action("MenuItems","CustomerMenu", new { id = item.MenuID })" class="viewmenu btn btn-sm btn-info">View Menu <i class="fas fa-angle-double-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+</div>

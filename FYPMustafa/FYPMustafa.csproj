@@ -211,6 +211,7 @@
     <Compile Include="Controllers\Api\MenuItemsController.cs" />
     <Compile Include="Controllers\Api\MenusController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CustomerMenuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
@@ -349,6 +350,9 @@
     <Content Include="Views\MenuItem\Delete.cshtml" />
     <Content Include="Views\Menu\Delete.cshtml" />
     <Content Include="Views\MenuItem\Edit.cshtml" />
+    <Content Include="Views\CustomerMenu\Menus.cshtml" />
+    <Content Include="Views\CustomerMenu\MenuItems.cshtml" />
+    <Content Include="Views\CustomerMenu\ItemDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
