@@ -23,10 +23,9 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Menus")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "MenuItems")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Categories")</li>
+                    <li>@Html.ActionLink("Menus", "Index", "Menu")</li>
+                    <li>@Html.ActionLink("MenuItems", "Index", "MenuItem")</li>
+                    <li>@Html.ActionLink("Categories", "Index", "Category")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -35,7 +34,7 @@
     <div class="container-fluid body-content">
        @RenderBody()
 
-        <footer class="page-footer font-small fcolor darken-3">
+        <footer id="footer" class="page-footer font-small fcolor darken-3">
 
             <!-- Footer Elements -->
             <div class="container">

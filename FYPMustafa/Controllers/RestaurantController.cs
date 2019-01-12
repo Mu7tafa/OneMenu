@@ -21,14 +21,13 @@ namespace FYPMustafa.Controllers
             _context.Dispose();
         }
         // GET: Restaurant
+        [Authorize]
         public ActionResult Index()
         {
-            if(!System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
-                return RedirectToAction("Login", "Account");
 
             var uid = User.Identity.GetUserId();
             var restaurant = _context.Restaurants.SingleOrDefault(c => c.UserId == uid);
-            if(restaurant == null)
+            if (restaurant == null)
                 return View();
             return View(restaurant);
         }
@@ -36,10 +35,26 @@ namespace FYPMustafa.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(Restaurant restaurant)
         {
-            restaurant.UserId = User.Identity.GetUserId();
-            _context.Restaurants.Add(restaurant);
+            var uid = User.Identity.GetUserId();
+            var rInDb = _context.Restaurants.SingleOrDefault(c => c.UserId == uid);
+            restaurant.UserId = uid;
+            if (rInDb == null)
+                _context.Restaurants.Add(restaurant);
             _context.SaveChanges();
-            return RedirectToAction("Index", "Restaurant");
+            return RedirectToAction("Dashboard", "Home");
+        }
+        
+        [Authorize]
+        public ActionResult QRcode()
+        {
+            var uid = User.Identity.GetUserId();
+            var restaurant = _context.Restaurants.SingleOrDefault(c => c.UserId == uid);
+            if (restaurant == null)
+                return View();
+
+            ViewBag.Message = "www.OneMenu.azurewebsites.net/CustomerMenu/Menus/" + restaurant.RestaurantID;
+
+            return View();
         }
     }
 }

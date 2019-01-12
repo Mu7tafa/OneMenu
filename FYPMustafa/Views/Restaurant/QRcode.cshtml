@@ -1,0 +1,12 @@
+﻿@using Microsoft.AspNet.Identity
+@using FYPMustafa.Models;
+@using Microsoft.AspNet.Identity.EntityFramework;
+
+@{
+    ViewBag.Title = "QRcode";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container" style="text-align:center">
+    <h2 style="margin-bottom:0px;">Restaurant QRcode</h2>
+    @Html.QRCode((string)ViewBag.Message, size: 500);
+</div>

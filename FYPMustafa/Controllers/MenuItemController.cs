@@ -67,7 +67,7 @@ namespace FYPMustafa.Controllers
             menuItem.Tags = SaveTags(menuItemViewModel.tags);
             _context.MenuItems.Add(menuItem);
             _context.SaveChanges();
-            return View("Create", menuItemViewModel);
+            return RedirectToAction("Index");
         }
 
         public ICollection<Picture> SaveImages(IEnumerable<HttpPostedFileBase> files)

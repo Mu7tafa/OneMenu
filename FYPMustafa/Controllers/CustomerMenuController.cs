@@ -29,7 +29,7 @@ namespace FYPMustafa.Controllers
         }
         public ActionResult ItemDetail(int id)
         {
-            return View(_context.MenuItems.SingleOrDefault(c => c.ItemID == id));
+            return View(_context.MenuItems.Include("Pictures").SingleOrDefault(c => c.ItemID == id));
         }
     }
 }

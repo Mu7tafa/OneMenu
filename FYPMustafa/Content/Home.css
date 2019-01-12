@@ -25,7 +25,7 @@ border-radius:0px;
     min-height: 80vh;
 }
 .fullscreen {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://images.unsplash.com/photo-1472393365320-db77a5abbecc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('Images/bgfirst.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -216,7 +216,7 @@ border-radius:0px;
     text-align: center;
     padding-bottom: 100px;
     box-shadow: inset 0 7px 20px -7px rgb(0, 0, 0);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://images.unsplash.com/photo-1540202404-69f85b6fd934?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=787&q=80);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('Images/Bgaq.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

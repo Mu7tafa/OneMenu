@@ -81,12 +81,7 @@ namespace FYPMustafa.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    var uid = User.Identity.GetUserId();
-                    var restaurant = _context.Restaurants.SingleOrDefault(c => c.UserId == uid);
-                    if (restaurant == null)
-                        return RedirectToAction("Index", "Restaurant");
-                    else
-                        return RedirectToLocal(returnUrl);
+                    return RedirectToAction("Dashboard", "Home");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -162,6 +157,7 @@ namespace FYPMustafa.Controllers
                 {
                     Email = model.Email,
                     UserName = model.Email,
+                    Name = model.Name,
                     Gender = model.Gender,
                     Street = model.Street,
                     City = model.City,
