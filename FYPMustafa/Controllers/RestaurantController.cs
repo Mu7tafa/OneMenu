@@ -31,7 +31,29 @@ namespace FYPMustafa.Controllers
                 return View();
             return View(restaurant);
         }
+
+        [Authorize]
+        public ActionResult Orders()
+        {
+            var uid = User.Identity.GetUserId();
+            var restaurant = _context.Restaurants.SingleOrDefault(c => c.UserId == uid);
+            if (restaurant == null)
+                return View();
+            return View(_context.Orders.ToList());
+        }
+
+        [Authorize]
+        public ActionResult OrderHistory()
+        {
+            var uid = User.Identity.GetUserId();
+            var restaurant = _context.Restaurants.SingleOrDefault(c => c.UserId == uid);
+            if (restaurant == null)
+                return View();
+            return View(_context.OrderHistories.ToList());
+        }
+
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult Save(Restaurant restaurant)
         {
@@ -43,7 +65,36 @@ namespace FYPMustafa.Controllers
             _context.SaveChanges();
             return RedirectToAction("Dashboard", "Home");
         }
-        
+
+
+        public ActionResult Serve(int id)
+        {
+            Order order = _context.Orders.Find(id);
+            OrderHistory history = new OrderHistory
+            {
+                ItemName = order.ItemName,
+                Quantity = order.Quantity,
+                Date = order.Date,
+                SpecialRequirments = order.SpecialRequirments,
+                RestaurantID = order.RestaurantID
+            };
+            _context.OrderHistories.Add(history);
+            _context.SaveChanges();
+
+            _context.Orders.Remove(order);
+            _context.SaveChanges();
+            return RedirectToAction("Orders");
+        }
+
+
+        public ActionResult Cancel(int id)
+        {
+            Order order = _context.Orders.Find(id);
+            _context.Orders.Remove(order);
+            _context.SaveChanges();
+            return RedirectToAction("Orders");
+        }
+
         [Authorize]
         public ActionResult QRcode()
         {

@@ -21,7 +21,28 @@ namespace FYPMustafa.Controllers
         // GET: CustomerMenu
         public ActionResult Menus(int id)
         {
+            Session["rID"] = id;
             return View(_context.Menus.Where(c => c.RestaurantID == id).ToList());
+        }
+        public ActionResult Order(int id)
+        {
+            var item = _context.MenuItems.Single(c => c.ItemID == id);
+            if (item == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.Message = item.Name;
+            Order order = new Order();
+            order.ItemName = item.Name;
+            return View(order);
+        }
+        public ActionResult Save(Order order)
+        {
+            order.RestaurantID = (int) Session["rID"];
+            order.Date = DateTime.Today.ToString();
+            _context.Orders.Add(order);
+            _context.SaveChanges();
+            return RedirectToAction("Menus/" + (int)Session["rID"]);
         }
         public ActionResult MenuItems(int id)
         {

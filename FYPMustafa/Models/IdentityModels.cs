@@ -62,6 +62,7 @@ namespace FYPMustafa.Models
         public DbSet<MenuItem> MenuItems { get; set; }
         public DbSet<Picture> Pictures { get; set; }
         public DbSet<Tag> Tags { get; set; }
+        public DbSet<OrderHistory> OrderHistories { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -71,5 +72,7 @@ namespace FYPMustafa.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<FYPMustafa.Models.Order> Orders { get; set; }
     }
 }

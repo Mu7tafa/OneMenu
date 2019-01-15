@@ -54,7 +54,7 @@
         <p>@Model.Ingredients</p>
         <p>@Model.Description</p>
         <p>
-            @Html.ActionLink("Order", "Order", "Restaurant", new { @class = "btn btn-primary" })
+            <a href="@Url.Action("Order","CustomerMenu", new { id = Model.ItemID })" class="btn btn-primary">Order</a>
         </p>
         <p>
             @Html.ActionLink("Report", "Create", "")

@@ -13,7 +13,7 @@ label {
     font-weight: 600;
 }
 
-input, .tagsinput {
+input, .tagsinput, textarea {
     background-color: #fafafa;
     border-radius: 3px;
     border: 1px solid rgba(0,0,0,.12) !important;
@@ -24,15 +24,15 @@ input, .tagsinput {
     padding: 8px;
     width: 100%;
 }
-    input:focus, .tagsinput:focus {
+    input:focus, .tagsinput:focus, textarea:focus {
         background-color: #fff !important;
         border-color: #1f24cc !important;
         box-shadow: none;
         outline: 0;
     }
 
-.input-group {
-    width:100%;
+.input-group, textarea {
+    width: 100%;
 }
 
 select{

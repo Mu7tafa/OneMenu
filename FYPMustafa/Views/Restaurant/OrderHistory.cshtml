@@ -1,0 +1,70 @@
+﻿@model IEnumerable<FYPMustafa.Models.OrderHistory>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/b-1.5.4/b-html5-1.5.4/r-2.2.2/sl-1.2.6/datatables.min.css" />
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/b-1.5.4/b-html5-1.5.4/r-2.2.2/sl-1.2.6/datatables.min.js"></script>
+
+<div class="container" style="min-height:500px;">
+    <h2>Order History</h2>
+
+    <hr />
+    <table id="jtable" class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    <label>Name</label>
+                </th>
+                <th>
+                    <label>Date</label>
+                </th>
+                <th>
+                    <label>Quantity</label>
+                </th>
+                <th>
+                    <label>Special requirements</label>
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ItemName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SpecialRequirments)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Served", "Serve", new { id = item.OrderID }) |
+                        @Html.ActionLink("Cancelled", "Cancel", new { id = item.OrderID })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @section Scripts {
+        <script src="~/Scripts/jquery-3.3.1.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/b-1.5.4/b-html5-1.5.4/r-2.2.2/sl-1.2.6/datatables.min.js"></script>
+    }
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#jtable').DataTable();
+        });
+    </script>
+
+</div>
