@@ -34,7 +34,8 @@ namespace FYPMustafa.Controllers
                 if (rID == 0)
                     return RedirectToAction("Index", "Restaurant");
                 var menus = _context.Database
-                        .SqlQuery<MenuItem>("SELECT ItemID, Status, Price, Description, Ingredients, CategoryID, MenuItems.MenuID, MenuItems.Name FROM Menus, MenuItems where Menus.RestaurantID = "+ rID +" And Menus.MenuID = MenuItems.MenuID")
+                        .SqlQuery<MenuItem>("SELECT ItemID, Status, Price, Description, Ingredients, CategoryID, MenuItems.MenuID, MenuItems.Name, " +
+                        "MenuItems.ImagePath FROM Menus, MenuItems where Menus.RestaurantID = " + rID +" And Menus.MenuID = MenuItems.MenuID")
                         .ToList<MenuItem>();
                 return View(menus); ;
             }
@@ -62,9 +63,12 @@ namespace FYPMustafa.Controllers
         }
         public ActionResult Save(MenuItemViewModel menuItemViewModel, IEnumerable<HttpPostedFileBase> files)
         {
+            ICollection<Picture> pics = SaveImages(files);
+            Picture virst = pics.OfType<Picture>().FirstOrDefault();
             MenuItem menuItem = menuItemViewModel.MenuItems;
-            menuItem.Pictures = SaveImages(files);
+            menuItem.Pictures = pics;
             menuItem.Tags = SaveTags(menuItemViewModel.tags);
+            menuItem.ImagePath = virst.PictureLocation;
             _context.MenuItems.Add(menuItem);
             _context.SaveChanges();
             return RedirectToAction("Index");

@@ -228,3 +228,10 @@ border-radius:0px;
 .service-box h3 {
     color: white !important;
 }
+
+@media (max-width: 767px) {
+    .fl_left, .fl_right {
+        float: none;
+        text-align: center !important;
+    }
+}
