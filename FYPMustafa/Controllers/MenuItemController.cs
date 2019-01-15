@@ -63,19 +63,33 @@ namespace FYPMustafa.Controllers
         }
         public ActionResult Save(MenuItemViewModel menuItemViewModel, IEnumerable<HttpPostedFileBase> files)
         {
-            ICollection<Picture> pics = SaveImages(files);
-            Picture virst = pics.OfType<Picture>().FirstOrDefault();
-            MenuItem menuItem = menuItemViewModel.MenuItems;
-            menuItem.Pictures = pics;
-            menuItem.Tags = SaveTags(menuItemViewModel.tags);
-            menuItem.ImagePath = virst.PictureLocation;
-            _context.MenuItems.Add(menuItem);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                ICollection<Picture> pics = SaveImages(files);
+                Picture virst = pics.OfType<Picture>().FirstOrDefault();
+                MenuItem menuItem = menuItemViewModel.MenuItems;
+                menuItem.Pictures = pics;
+                menuItem.Tags = SaveTags(menuItemViewModel.tags);
+                menuItem.ImagePath = virst.PictureLocation;
+                _context.MenuItems.Add(menuItem);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return View(ex.Message);
+            }
         }
 
         public ICollection<Picture> SaveImages(IEnumerable<HttpPostedFileBase> files)
         {
+            string subPath = "~/Images/MenuItems/";
+
+            bool exists = System.IO.Directory.Exists(Server.MapPath(subPath));
+
+            if (!exists)
+                System.IO.Directory.CreateDirectory(Server.MapPath(subPath));
+
             List<Picture> pictures = new List<Picture>();
             foreach (HttpPostedFileBase file in files)
             {

@@ -54,7 +54,7 @@ namespace FYPMustafa.Controllers
             menu.RestaurantID = rID;
             _context.Menus.Add(menu);
             _context.SaveChanges();
-            return RedirectToAction("Index", "Restaurant");
+            return RedirectToAction("Index");
         }
 
         public ActionResult Edit(int? id)

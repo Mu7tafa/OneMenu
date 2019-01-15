@@ -52,7 +52,7 @@ namespace FYPMustafa.Controllers
             if (restaurant == null)
                 return View();
 
-            ViewBag.Message = "www.OneMenu.azurewebsites.net/CustomerMenu/Menus/" + restaurant.RestaurantID;
+            ViewBag.Message = "http://onemenufyp.azurewebsites.net/CustomerMenu/Menus/" + restaurant.RestaurantID;
 
             return View();
         }
