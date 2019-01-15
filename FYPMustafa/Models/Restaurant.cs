@@ -13,7 +13,10 @@ namespace FYPMustafa.Models
         public Restaurant()
         {
             this.Menus = new HashSet<Menu>();
+            this.Orders = new HashSet<Order>();
+            this.OrderHistories = new HashSet<OrderHistory>();
         }
+
 
         [Key]
         public int RestaurantID { get; set; }
@@ -45,6 +48,12 @@ namespace FYPMustafa.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public ICollection<Menu> Menus { get; set; }
-        
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public ICollection<Order> Orders { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public ICollection<OrderHistory> OrderHistories { get; set; }
+
     }
 }
