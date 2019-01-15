@@ -248,6 +248,10 @@
     <Compile Include="Migrations\201812270834382_Item to tag relationship.Designer.cs">
       <DependentUpon>201812270834382_Item to tag relationship.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901130720416_ImagePath for MenuItem.cs" />
+    <Compile Include="Migrations\201901130720416_ImagePath for MenuItem.Designer.cs">
+      <DependentUpon>201901130720416_ImagePath for MenuItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -292,6 +296,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="ClassDiagram1.cd" />
+    <Content Include="ClassDiagram2.cd" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -397,6 +403,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812270834382_Item to tag relationship.resx">
       <DependentUpon>201812270834382_Item to tag relationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901130720416_ImagePath for MenuItem.resx">
+      <DependentUpon>201901130720416_ImagePath for MenuItem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

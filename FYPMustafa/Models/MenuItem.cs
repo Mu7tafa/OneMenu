@@ -37,6 +37,9 @@ namespace FYPMustafa.Models
 
         public string Description { get; set; }
 
+        [StringLength(250)]
+        public string ImagePath { get; set; }
+
         public string Ingredients { get; set; }
 
         [ForeignKey("CategoryID")]
