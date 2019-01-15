@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="FYPMustafa.Models.Category">
+    <Position X="16.5" Y="1" Width="2.25" />
+    <AssociationLine Name="MenuItems" Type="FYPMustafa.Models.MenuItem">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.11" Y="0.06" Height="0.182" Width="1.463" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAABAAAAAAAAQAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Models\Category.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="MenuItems" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="FYPMustafa.Models.ApplicationUser">
+    <Position X="2.75" Y="1.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAECAAAAACIEAAAAAQAAAIQAAABAAIAAAAAAAA=</HashCode>
+      <FileName>Models\IdentityModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FYPMustafa.Models.Menu">
+    <Position X="10" Y="4.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAIQAAAAABAAAAQAEAAAAAAA=</HashCode>
+      <FileName>Models\Menu.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="MenuItems" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="FYPMustafa.Models.MenuItem">
+    <Position X="13.25" Y="2.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAGAQAgAAAAgAAAAKQAAAAIBEAAAAAAAAAACAA=</HashCode>
+      <FileName>Models\MenuItem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Pictures" />
+      <Property Name="Tags" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="FYPMustafa.Models.Order">
+    <Position X="3" Y="5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAEABAAAAAAAABgAAAAAAAAAAAAAAABAAAEgAAAAAA=</HashCode>
+      <FileName>Models\Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FYPMustafa.Models.OrderHistory">
+    <Position X="9.75" Y="1.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAEABAAAAAAAABAAAAAAAAAAAAAAAABAAAEgAAAAAA=</HashCode>
+      <FileName>Models\OrderHistory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FYPMustafa.Models.Picture">
+    <Position X="16.5" Y="5.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAgAAAAAAAAAAACRAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Picture.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FYPMustafa.Models.Restaurant">
+    <Position X="6.5" Y="1.5" Width="2.25" />
+    <AssociationLine Name="Menus" Type="FYPMustafa.Models.Menu">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="1.163" Y="0.06" Height="0.182" Width="0.807" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Orders" Type="FYPMustafa.Models.Order">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.11" Y="0.06" Height="0.182" Width="0.777" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>IAEAAAAAABAAAAAYAAAAAAwAAAIAAAABAgIEAAAAAAA=</HashCode>
+      <FileName>Models\Restaurant.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ApplicationUser" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Menus" />
+      <Property Name="Orders" />
+      <Property Name="OrderHistories" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="FYPMustafa.Models.Tag">
+    <Position X="16.5" Y="3.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAgAAAAAAAAAAAAQAAAAAAAAAACAA=</HashCode>
+      <FileName>Models\Tag.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

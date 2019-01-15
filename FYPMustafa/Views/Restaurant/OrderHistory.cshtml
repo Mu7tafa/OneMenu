@@ -29,7 +29,6 @@
                 <th>
                     <label>Special requirements</label>
                 </th>
-                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -48,10 +47,6 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.SpecialRequirments)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Served", "Serve", new { id = item.OrderID }) |
-                        @Html.ActionLink("Cancelled", "Cancel", new { id = item.OrderID })
                     </td>
                 </tr>
             }

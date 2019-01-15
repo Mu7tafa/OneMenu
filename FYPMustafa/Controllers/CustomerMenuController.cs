@@ -36,6 +36,8 @@ namespace FYPMustafa.Controllers
             order.ItemName = item.Name;
             return View(order);
         }
+
+        [HttpPost, ActionName("Delete")]
         public ActionResult Save(Order order)
         {
             order.RestaurantID = (int) Session["rID"];
